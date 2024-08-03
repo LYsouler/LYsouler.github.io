@@ -95,9 +95,9 @@ function startHeartAnimation() {
 function timeElapse(date){
     var current = Date();
     var seconds = Math.ceil((Date.parse(current) - Date.parse(date)) / 1000);
-    var days = Math.ceil(seconds / (3600 * 24));
+    var days = Math.ceil(seconds / (3600 * 24)) - 1;
     seconds = seconds % (3600 * 24);
-    var hours = Math.ceil(seconds / 3600);
+    var hours = Math.ceil(seconds / 3600) - 1;
     console.log(hours);
     console.log(seconds);
     if (hours < 10) {
