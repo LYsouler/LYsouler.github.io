@@ -98,6 +98,8 @@ function timeElapse(date){
     var days = Math.ceil(seconds / (3600 * 24));
     seconds = seconds % (3600 * 24);
     var hours = Math.ceil(seconds / 3600);
+    console.log(hours);
+    console.log(seconds);
     if (hours < 10) {
         hours = "0" + hours;
     }
@@ -110,8 +112,7 @@ function timeElapse(date){
     if (seconds < 10) {
         seconds = "0" + seconds;
     }
-    console.log(hours);
-    console.log(seconds);
+    
     var result = "<span class=\"digit\">" + days + "</span> days <span class=\"digit\">" + hours + "</span> hours <span class=\"digit\">" + minutes + "</span> minutes <span class=\"digit\">" + seconds + "</span> seconds";
     $("#elapseClock").html(result);
 }
