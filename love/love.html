@@ -66,7 +66,11 @@ body {
 }
 </style>
 
+
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
 <link href="./css/default.css" type="text/css" rel="stylesheet">
+<link href="./css/timelines.css" type="text/css" rel="stylesheet">
+<link href="./css/timelines.scss" type="text/css" rel="stylesheet">
 <!-- <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script> -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
@@ -76,7 +80,8 @@ body {
 </head>
 
 <body>
-
+<script src="https://use.typekit.net/bkt6ydm.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
 <div id="mainDiv">
     <div id="content">
         <div id="code">
@@ -84,7 +89,7 @@ body {
             <span class="space"/><span class="comments">*2024—08-10,</span><br />
             <span class="space"/><span class="comments">*/</span><br />
             Boy name = <span class="keyword">Mr</span> Li<br />
-            Girl name = <span class="keyword">Mrs</span> WANG<br />
+            Girl name = <span class="keyword">Mrs</span> Wang<br />
             <span class="comments">// Fall in love river. </span><br />
             The boy love the girl;<br />
             <span class="comments">// They love each other.</span><br />
@@ -108,9 +113,6 @@ body {
         </div>
         <div id="loveHeart">
             <canvas id="garden"></canvas>
-            <div style="position:absolute;left:50px;">
-                <img src="./img/20240810090621.jpg" style="width:100px;"/>
-            </div>
             <div id="words">
                 <div id="messages">
                     亲爱的，这是我们相爱在一起的时光。
@@ -150,6 +152,68 @@ body {
         <a href="#">....</a><br />
         <a href="#">....</a><br />
         
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row example-centered">
+        <div class="col-md-12 example-title">
+            <h2>记忆时间轴</h2>
+            <p>我们的美好时刻</p>
+        </div>
+        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+            <ul class="timeline timeline-centered">
+                <li class="timeline-item">
+                    <div class="timeline-info">
+                        <span>2024年8月10日</span>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">我们正式开始交往了</h3>
+                        <p>小玉和小宇正式开始交往了</p>
+                    </div>
+                </li>
+<!--                 <li class="timeline-item">
+                    <div class="timeline-info">
+                        <span>March 23, 2016</span>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Event Title</h3>
+                        <p>Nullam vel sem. Nullam vel sem. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Donec vitae sapien ut libero venenatis faucibus. ullam dictum felis
+                            eu pede mollis pretium. Pellentesque ut neque. </p>
+                    </div>
+                </li>
+                <li class="timeline-item period">
+                    <div class="timeline-info"></div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h2 class="timeline-title">April 2016</h2>
+                    </div>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-info">
+                        <span>April 02, 2016</span>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Event Title</h3>
+                        <p>Nullam vel sem. Nullam vel sem. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Donec vitae sapien ut libero venenatis faucibus. ullam dictum felis
+                            eu pede mollis pretium. Pellentesque ut neque. </p>
+                    </div>
+                </li> -->
+<!--                 <li class="timeline-item">
+                    <div class="timeline-info">
+                        <span>April 28, 2016</span>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Event Title</h3>
+                        <p>Nullam vel sem. Nullam vel sem. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Donec vitae sapien ut libero venenatis faucibus. ullam dictum felis
+                            eu pede mollis pretium. Pellentesque ut neque. </p>
+                    </div>
+                </li> -->
+            </ul>
+        </div>
     </div>
 </div>
 
