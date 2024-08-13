@@ -9,10 +9,67 @@
     font-family: digit;
     src: url('digital-7_mono.ttf') format("truetype");
 } */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid-item {
+  position: relative;
+  width: 25%;
+  border: 2px solid hsla(0, 0%, 0%, 0.5);
+  box-sizing: border-box;
+  counter-increment: count;
+}
+.grid-item--width2{
+  position: relative;
+  width: 50%;
+  border: 2px solid hsla(0, 0%, 0%, 0.5);
+  box-sizing: border-box;
+  counter-increment: count;
+}
+.grid-item--width3{
+  position: relative;
+  width: 175%;
+  border: 2px solid hsla(0, 0%, 0%, 0.5);
+  box-sizing: border-box;
+  counter-increment: count;
+}
+.grid-item--width4{
+  position: relative;
+  width: 100%;
+  border: 2px solid hsla(0, 0%, 0%, 0.5);
+  box-sizing: border-box;
+  counter-increment: count;
+}
+
+.grid-item img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+
+.grid-item::after {
+  position: absolute;
+  display: block;
+  top: 2px;
+  left: 2px;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  line-height: 24px;
+  background-color: #000;
+  color: #fff;
+  content: counter(count);
+}
 </style>
 
 <link href="./css/default.css" type="text/css" rel="stylesheet">
-<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script> -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script type="text/javascript" src="./js/garden.js"></script>
 <script type="text/javascript" src="./js/functions.js"></script>
 
@@ -66,6 +123,29 @@
             </div>
         </div>
     </div>
+    <div>
+        <body>
+            <div class="grid">
+              <!-- 第一行 -->
+              <div class="grid-item">
+                <img src="./img/20240810090621.jpg" alt="">
+              </div>
+              <div class="grid-item grid-item--width2">
+                <img src="./img/20240810211402.jpg" alt="">
+              </div>
+              <!-- 第二行 -->
+              <div class="grid-item grid-item--width4">
+                <img src="./img/8A655697FB8E5BB3744E0F24CFF98032.gif" alt="">
+              </div>
+              <!-- 第三行 -->
+              <!-- <div class="grid-item ">
+                <img src="./img/20240810090621.jpg" alt="">
+              </div> -->
+              
+          
+            </div>
+          </body>
+    </div>
     <div id="copyright">
         <a href="#">....</a><br />
         <a href="#">....</a><br />
@@ -105,6 +185,44 @@ if (!document.createElement('canvas').getContext) {
     adjustCodePosition();
     $("#code").typewriter();
 }
+var $grid = $('.grid').masonry({
+  itemSelector: '.grid-item', 
+  percentPosition: true, //使用百分比宽度的响应式布局
+  horizontalOrder: true, //对项目进行布局以保持水平的从左到右的顺序,定义了此条件，照片一般会按照从左到右顺序排列，但也不是绝对的。
+  originLeft: true, //设置布局方式为从左到右，此项是默认值，可以不填写，如果你设置值为false，则会从右到左排序
+  originTop: true,//设置布局方式为从上到下，此项是默认值，可以不填写，如果你设置值为false，则会从下到上排序
+  transitionDuration: '0.8s',//更改位置或外观时的过渡持续时间,默认是0.4s
+  resize:true, //调整窗口大小时自动调整元素大小和位置，此项不推荐关闭
+  initLayout: true,//默认为true，在初始化时候启用布局，如果设置为在初始化时禁用布局，可以在初始布局之前使用方法或添加事件，执行玩自定义方法后，在使用$grid.masonry()方法来初始化
+})
+
+//如果我initLayout: false,那么在初始化布局前，会先执行此方法，然后在调用$('.grid').masonry()方法进行初始化，下面方法只是举例
+$grid.masonry( 'on', 'layoutComplete', function() {
+  console.log('layout is complete');
+});
+// 如果initLayout: true,则不需要此方法
+$grid.masonry();
+
+/** masonry的配置项一共有以下，不再多做介绍，可以自行去看英文官网。
+- Recommended 
+- itemSelector 
+- columnWidth 
+- Layout
+- Element sizing 
+- gutter
+- horizontalOrder 
+- percentPosition
+- stamp 
+- fitWidth
+- originLeft 
+- originTop
+- Setup 
+- containerStyle 
+- transitionDuration 
+- stagger 
+- resize 
+- initLayout
+**/
 </script>
 
 </body>
